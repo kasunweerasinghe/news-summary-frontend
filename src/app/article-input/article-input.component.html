@@ -1,0 +1,26 @@
+<form [formGroup]="articleInputForm" (ngSubmit)="onSummarize()">
+  <div class="input-group mt-5 mb-2" style="margin-left: 25%;">
+
+    <div class="col-5">
+      <input formControlName="urlInput" type="text" class="form-control" placeholder="Enter URL">
+      <div *ngIf="articleInputForm.get('urlInput')?.dirty && articleInputForm.get('urlInput')?.errors"
+           class="p-invalid text-align-left">
+        Link is Required
+      </div>
+    </div>
+
+    <select style="margin-left: 5px;" formControlName="languageSelect">
+      <option *ngFor="let language of languages" [value]="language">{{ getLanguageName(language) }}</option>
+    </select>
+
+    <div class="col-3 ms-2">
+      <button type="submit" class="btn btn-dark" [disabled]="isLoading">Summarize</button>
+    </div>
+
+  </div>
+</form>
+
+
+
+
+

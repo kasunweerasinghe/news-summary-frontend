@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'news-summary-frontend';
+  summaryData: any; // Property to store received summary data
+
+  displaySummary(summary: any) {
+    this.summaryData = summary;
+  }
 }

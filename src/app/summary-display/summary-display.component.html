@@ -1,0 +1,37 @@
+<div class="d-flex justify-content-center align-items-center">
+  <div class="col-6 mt-5 summery-labels">
+
+    <form [formGroup]="summeryDisplayForm">
+      <div class="mt-2">
+        <label for="resultTitle">Title</label>
+        <input id="resultTitle" type="text" class="form-control" formControlName="title" readonly>
+      </div>
+
+      <div class="mt-2">
+        <label for="resultAuthor">Author</label>
+        <input id="resultAuthor" type="text" class="form-control" formControlName="author" readonly>
+      </div>
+
+      <div class="mt-2">
+        <label for="resultPublishDate">Publishing Date</label>
+        <input id="resultPublishDate" type="text" class="form-control" formControlName="publishDate" readonly>
+      </div>
+
+      <div class="mt-2">
+        <label for="resultSummary">Summary</label>
+        <textarea id="resultSummary" class="form-control" formControlName="summary" rows="10"
+                  readonly>{{ summaryData?.summary }}</textarea>
+      </div>
+
+
+      <div class="mt-2">
+        <label for="resultSentiment">Sentiment Analysis</label>
+        <input id="resultSentiment" type="text" class="form-control" formControlName="sentiment" readonly>
+      </div>
+
+      <div class="col-3 mt-2">
+        <button class="btn btn-warning" (click)="resetSummary()">Reset</button>
+      </div>
+    </form>
+  </div>
+</div>
